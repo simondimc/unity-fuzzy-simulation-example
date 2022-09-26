@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.simondimc.fuzzysimulation": "file:C:/Users/simon/git/unity-fuzzy-simulation",
+    "com.simondimc.fuzzysimulation": "https://github.com/simondimc/unity-fuzzy-simulation.git",
     "com.unity.cinemachine": "2.6.15",
     "com.unity.collab-proxy": "1.15.12",
     "com.unity.ide.rider": "2.0.7",
