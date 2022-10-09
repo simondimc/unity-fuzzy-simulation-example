@@ -45,48 +45,35 @@ public class HumanAgent : Agent {
         
         if (this.Neighbors != null && this.Neighbors.Count > 0) {
             
-            float distanceP = 0;
-            float positionP = 0;
-            float directionP = 0;
-            float speedP = 0;
+            for (int i = 0; i < this.Neighbors.Count; i++) {
+                Vector3 neighborPosition = this.Neighbors[i].Position;
+                Vector3 neighborDirection = this.Neighbors[i].Direction;
+                float neighborSpeed = this.Neighbors[i].Speed;
 
-            Vector3 observed_position = new Vector3(0, 0, 0);
-            Vector3 observed_direction = new Vector3(0, 0, 0);
-            float observed_speed = 0;
-            foreach(Agent a in this.Neighbors) {
-                observed_position += a.Position;
-                observed_direction += a.Direction;
-                observed_speed += a.Speed;
+                float distance = (Vector3.Distance(this.Position, neighborPosition) / this.PerceptionRadius) * 100;
+                if (distance > 100) distance = 100;
+                if (distance < 0) distance = 0;
+                this.GetFuzzyController().SetValue(i, "distance", distance);
+
+                float position = Vector3.SignedAngle(
+                    this.Direction, 
+                    neighborPosition - this.Position, 
+                    Vector3.up
+                );
+                this.GetFuzzyController().SetValue(i, "position", position);
+
+                float direction = Vector3.SignedAngle(
+                    this.Direction, 
+                    neighborDirection, 
+                    Vector3.up
+                );
+                this.GetFuzzyController().SetValue(i, "direction", direction);
+
+                float speed = (((neighborSpeed - this.Speed) - this.MinSpeed) / (this.MaxSpeed - this.MinSpeed)) * 100;
+                if (speed > 100) speed = 100;
+                if (speed < -100) speed = -100;
+                this.GetFuzzyController().SetValue(i, "speed", speed);
             }
-            observed_position /= this.Neighbors.Count;
-            observed_direction /= this.Neighbors.Count;
-            observed_direction = observed_direction.normalized;
-            observed_speed /= this.Neighbors.Count;
-
-            distanceP = (Vector3.Distance(Position, observed_position) / this.PerceptionRadius) * 100;
-            if (distanceP > 100) distanceP = 100;
-            if (distanceP < 0) distanceP = 0;
-
-            positionP = Vector3.SignedAngle(
-                this.Direction, 
-                observed_position - Position, 
-                Vector3.up
-            );
-
-            directionP = Vector3.SignedAngle(
-                this.Direction, 
-                observed_direction, 
-                Vector3.up
-            );
-
-            speedP = (((observed_speed - this.Speed) - this.MinSpeed) / (this.MaxSpeed - this.MinSpeed)) * 100;
-            if (speedP > 100) speedP = 100;
-            if (speedP < -100) speedP = -100;
-
-            this.GetFuzzyController().SetValue("distance", distanceP);
-            this.GetFuzzyController().SetValue("position", positionP);
-            this.GetFuzzyController().SetValue("direction", directionP);
-            this.GetFuzzyController().SetValue("speed", speedP);
         }
 
         float? min_wall_distance = null;
@@ -98,7 +85,7 @@ public class HumanAgent : Agent {
             Vector3 p1 = wall.transform.position + new Vector3(Mathf.Cos(d) * sx / 2, 0, Mathf.Sin(d) * sx / 2);
             Vector3 p2 = wall.transform.position + new Vector3(Mathf.Cos(d) * -sx / 2, 0, Mathf.Sin(d) * -sx / 2);
 
-            Vector3 pointDistance = Utils.PointDistanceLinePoint(new Vector2(p1.x, p1.z), new Vector2(p2.x, p2.z), new Vector2(Position.x, Position.z));
+            Vector3 pointDistance = Utils.PointDistanceLinePoint(new Vector2(p1.x, p1.z), new Vector2(p2.x, p2.z), new Vector2(this.Position.x, this.Position.z));
 
             if (min_wall_distance == null || pointDistance.z < min_wall_distance) {
                 min_wall_distance = pointDistance.z;
@@ -116,25 +103,25 @@ public class HumanAgent : Agent {
             Vector2 bl = new Vector2(pos.x - width / 2, pos.y - height / 2);
             Vector2 br = new Vector2(pos.x + width / 2, pos.y - height / 2);
 
-            Vector3 td = Utils.PointDistanceLinePoint(tl, tr, new Vector2(Position.x, Position.z));
+            Vector3 td = Utils.PointDistanceLinePoint(tl, tr, new Vector2(this.Position.x, this.Position.z));
             if (min_wall_distance == null || td.z < min_wall_distance) {
                 min_wall_distance = td.z;
                 min_wall_position = new Vector2(td.x, td.y);
             }
 
-            Vector3 bd = Utils.PointDistanceLinePoint(bl, br, new Vector2(Position.x, Position.z));
+            Vector3 bd = Utils.PointDistanceLinePoint(bl, br, new Vector2(this.Position.x, this.Position.z));
             if (min_wall_distance == null || bd.z < min_wall_distance) {
                 min_wall_distance = bd.z;
                 min_wall_position = new Vector2(bd.x, bd.y);
             }
 
-            Vector3 ld = Utils.PointDistanceLinePoint(bl, tl, new Vector2(Position.x, Position.z));
+            Vector3 ld = Utils.PointDistanceLinePoint(bl, tl, new Vector2(this.Position.x, this.Position.z));
             if (min_wall_distance == null || ld.z < min_wall_distance) {
                 min_wall_distance = ld.z;
                 min_wall_position = new Vector2(ld.x, ld.y);
             }
 
-            Vector3 rd = Utils.PointDistanceLinePoint(br, tr, new Vector2(Position.x, Position.z));
+            Vector3 rd = Utils.PointDistanceLinePoint(br, tr, new Vector2(this.Position.x, this.Position.z));
             if (min_wall_distance == null || rd.z < min_wall_distance) {
                 min_wall_distance = rd.z;
                 min_wall_position = new Vector2(rd.x, rd.y);
@@ -147,7 +134,7 @@ public class HumanAgent : Agent {
             float positionW = 0;
 
             Vector3 wall_position = new Vector3(min_wall_position.Value.x, 0, min_wall_position.Value.y);
-            Vector3 transform_position = new Vector3(Position.x, 0, Position.z);
+            Vector3 transform_position = new Vector3(this.Position.x, 0, this.Position.z);
 
             distanceW = (Vector3.Distance(transform_position, wall_position) / WallPerceptionRadius) * 100;
             if (distanceW > 100) distanceW = 100;
@@ -156,19 +143,9 @@ public class HumanAgent : Agent {
 
             positionW = Vector3.SignedAngle(this.Direction, wall_position - transform_position, Vector3.up);
 
-            this.GetFuzzyController().SetValue("distance_wall", distanceW);
-            this.GetFuzzyController().SetValue("position_wall", positionW);
+            this.GetFuzzyController().SetValue(-1, "distance_wall", distanceW);
+            this.GetFuzzyController().SetValue(-1, "position_wall", positionW);
         }
-
-        /*
-        if (this.target != null) {
-            float distanceT = (Vector3.Distance(this.target.transform.position, this.Position) / this.PerceptionRadius) * 100;
-            float positionT = Vector3.SignedAngle(this.Direction, this.target.transform.position - this.Position, Vector3.up);
-
-            this.GetFuzzyController().SetValue("target_distance", distanceT);
-            this.GetFuzzyController().SetValue("target_position", positionT);
-        }
-        */
 
         if (this.target != null && this.grid != null) {
             Grid grid_script = grid.GetComponent<Grid>();
@@ -181,22 +158,17 @@ public class HumanAgent : Agent {
 
             float positionT = Vector3.SignedAngle(this.Direction, local_pos - this.Position, Vector3.up);
 
-            //Debug.Log("distance " + distanceT);
-            //Debug.Log("position " + positionT);
-
-            this.GetFuzzyController().SetValue("target_distance", distanceT);
-            this.GetFuzzyController().SetValue("target_position", positionT);
+            this.GetFuzzyController().SetValue(-2, "target_distance", distanceT);
+            this.GetFuzzyController().SetValue(-2, "target_position", positionT);
         }
 
         this.GetFuzzyController().Step();
 
-        float? flightDirection = this.GetFuzzyController().GetValue("flight_direction");
-        float? flightSpeed = this.GetFuzzyController().GetValue("flight_speed");
+        float? walkDirection = this.GetFuzzyController().GetValue("walk_direction");
+        float? walkSpeed = this.GetFuzzyController().GetValue("walk_speed");
         
-        //Debug.Log("flightDirection " + flightDirection);
-
-        if (flightDirection != null) this.Direction = (Quaternion.AngleAxis(flightDirection.Value, Vector3.up) * this.Direction).normalized;
-        if (flightSpeed != null) this.Speed += (flightSpeed.Value / 100) * (this.MaxSpeed - this.MinSpeed) + this.MinSpeed;
+        if (walkDirection != null) this.Direction = (Quaternion.AngleAxis(walkDirection.Value, Vector3.up) * this.Direction).normalized;
+        if (walkSpeed != null) this.Speed += (walkSpeed.Value / 100) * (this.MaxSpeed - this.MinSpeed) + this.MinSpeed;
 
         if (this.Speed > this.MaxSpeed) this.Speed = this.MaxSpeed;
         if (this.Speed < this.MinSpeed) this.Speed = this.MinSpeed;

@@ -749,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 2453282187075290471, guid: 02ae96959495b4a4ebb9dec18a094a5e, type: 3}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: NumberToSpawn
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: numberToSpawn
@@ -765,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 483fcf8a0c435cc43ae1102df134ee46, type: 2}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: CalcEveryNFrames
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: fastNeighborCalc
@@ -817,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: NeighborhoodCalcMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: neighborhoodCalcMode
@@ -2857,7 +2857,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9192ec25dcf9054c865945bf7cd66b3, type: 2}
+  - {fileID: 2100000, guid: a6a98f6bdebc3ab4798f8a4f912b5079, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2886,7 +2886,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141953092}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &2141953096
 Transform:
   m_ObjectHideFlags: 0
@@ -2896,7 +2896,7 @@ Transform:
   m_GameObject: {fileID: 2141953092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1, y: 0, z: -42.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19

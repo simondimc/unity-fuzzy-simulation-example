@@ -47,65 +47,50 @@ public class BirdAgent3D : Agent {
         Vector3 u = Vector3.Cross(this.Direction, r).normalized;
         
         if (this.Neighbors != null && this.Neighbors.Count > 0) {
-            
-            float distanceP = 0;
-            float hPositionP = 0;
-            float vPositionP = 0;
-            float hDirectionP = 0;
-            float vDirectionP = 0;
-            float speedP = 0;
 
-            Vector3 observed_position = new Vector3(0, 0, 0);
-            Vector3 observed_direction = new Vector3(0, 0, 0);
-            float observed_speed = 0;
-            foreach(Agent a in this.Neighbors) {
-                observed_position += a.Position;
-                observed_direction += a.Direction;
-                observed_speed += a.Speed;
+            for (int i = 0; i < this.Neighbors.Count; i++) {
+                Vector3 neighborPosition = this.Neighbors[i].Position;
+                Vector3 neighborDirection = this.Neighbors[i].Direction;
+                float neighborSpeed = this.Neighbors[i].Speed;
+
+                float distance = (Vector3.Distance(this.Position, neighborPosition) / this.PerceptionRadius) * 100;
+                if (distance > 100) distance = 100;
+                if (distance < 0) distance = 0;
+                this.GetFuzzyController().SetValue(i, "distance", distance);
+
+                float hPosition = Vector3.SignedAngle(
+                    this.Direction, 
+                    Vector3.ProjectOnPlane(neighborPosition - this.Position, u),
+                    u
+                );
+                this.GetFuzzyController().SetValue(i, "h_position", hPosition);
+
+                float vPosition = Vector3.SignedAngle(
+                    this.Direction, 
+                    Vector3.ProjectOnPlane(neighborPosition - this.Position, r), 
+                    r
+                );
+                this.GetFuzzyController().SetValue(i, "v_position", vPosition);
+
+                float hDirection = Vector3.SignedAngle(
+                    this.Direction, 
+                    Vector3.ProjectOnPlane(neighborDirection, u),
+                    u
+                );
+                this.GetFuzzyController().SetValue(i, "h_direction", hDirection);
+
+                float vDirection = Vector3.SignedAngle(
+                    this.Direction, 
+                    Vector3.ProjectOnPlane(neighborDirection, r),
+                    r
+                );
+                this.GetFuzzyController().SetValue(i, "v_direction", vDirection);
+
+                float speed = (((neighborSpeed - this.Speed) - this.MinSpeed) / (this.MaxSpeed - this.MinSpeed)) * 100;
+                if (speed > 100) speed = 100;
+                if (speed < -100) speed = -100;
+                this.GetFuzzyController().SetValue(i, "speed", speed);
             }
-            observed_position /= this.Neighbors.Count;
-            observed_direction /= this.Neighbors.Count;
-            observed_direction = observed_direction.normalized;
-            observed_speed /= this.Neighbors.Count;
-
-            distanceP = (Vector3.Distance(this.Position, observed_position) / this.PerceptionRadius) * 100;
-            if (distanceP > 100) distanceP = 100;
-            if (distanceP < 0) distanceP = 0;
-
-            hPositionP = Vector3.SignedAngle(
-                this.Direction, 
-                Vector3.ProjectOnPlane(observed_position - Position, u),
-                u
-            );
-
-            vPositionP = Vector3.SignedAngle(
-                this.Direction, 
-                Vector3.ProjectOnPlane(observed_position - Position, r), 
-                r
-            );
-
-            hDirectionP = Vector3.SignedAngle(
-                this.Direction, 
-                Vector3.ProjectOnPlane(observed_direction, u),
-                u
-            );
-
-            vDirectionP = Vector3.SignedAngle(
-                this.Direction, 
-                Vector3.ProjectOnPlane(observed_direction, r),
-                r
-            );
-
-            speedP = (((observed_speed - this.Speed) - this.MinSpeed) / (this.MaxSpeed - this.MinSpeed)) * 100;
-            if (speedP > 100) speedP = 100;
-            if (speedP < -100) speedP = -100;
-
-            this.GetFuzzyController().SetValue("distance", distanceP);
-            this.GetFuzzyController().SetValue("h_position", hPositionP);
-            this.GetFuzzyController().SetValue("v_position", vPositionP);
-            this.GetFuzzyController().SetValue("h_direction", hDirectionP);
-            this.GetFuzzyController().SetValue("v_direction", vDirectionP);
-            this.GetFuzzyController().SetValue("speed", speedP);
         }
 
         float? min_wall_distance = null;
@@ -149,9 +134,9 @@ public class BirdAgent3D : Agent {
                 r
             );
 
-            this.GetFuzzyController().SetValue("distance_wall", distanceW);
-            this.GetFuzzyController().SetValue("h_position_wall", hPositionW);
-            this.GetFuzzyController().SetValue("v_position_wall", vPositionW);
+            this.GetFuzzyController().SetValue(-1, "distance_wall", distanceW);
+            this.GetFuzzyController().SetValue(-1, "h_position_wall", hPositionW);
+            this.GetFuzzyController().SetValue(-1, "v_position_wall", vPositionW);
         }
 
         this.GetFuzzyController().Step();

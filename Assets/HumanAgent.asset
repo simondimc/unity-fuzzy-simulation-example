@@ -47,11 +47,11 @@ MonoBehaviour:
     lowerBound: -180
   outputVariables:
   - guid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
-    name: flight_direction
+    name: walk_direction
     upperBound: 360
     lowerBound: -360
   - guid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
-    name: flight_speed
+    name: walk_speed
     upperBound: 200
     lowerBound: -200
   variableValues:
@@ -19834,8 +19834,8 @@ MonoBehaviour:
       rightTangentMode: 2
     - x: 0.45074463
       y: 0
-      inTangent: -0.005517362
-      outTangent: -0.005517362
+      inTangent: -0.011034724
+      outTangent: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
       weightedMode: 0
@@ -19980,135 +19980,135 @@ MonoBehaviour:
     - x: -91.40625
       y: 0.98626286
     - x: -90
-      y: 0.99809724
+      y: 0.998099
     - x: -88.59375
-      y: 0.98243237
+      y: 0.98258144
     - x: -87.1875
-      y: 0.9665393
+      y: 0.96706384
     - x: -85.78125
-      y: 0.95042926
+      y: 0.9515463
     - x: -84.375
-      y: 0.93411344
+      y: 0.9360287
     - x: -82.96875
-      y: 0.917603
+      y: 0.9205111
     - x: -81.5625
-      y: 0.9009092
+      y: 0.90499353
     - x: -80.15625
-      y: 0.8840432
+      y: 0.88947594
     - x: -78.75
-      y: 0.8670163
+      y: 0.87395835
     - x: -77.34375
-      y: 0.8498396
+      y: 0.8584408
     - x: -75.9375
-      y: 0.8325244
+      y: 0.8429232
     - x: -74.53125
-      y: 0.81508195
+      y: 0.82740563
     - x: -73.125
-      y: 0.79752326
+      y: 0.81188804
     - x: -71.71875
-      y: 0.7798597
+      y: 0.7963705
     - x: -70.3125
-      y: 0.7621025
+      y: 0.7808529
     - x: -68.90625
-      y: 0.74426275
+      y: 0.7653353
     - x: -67.5
-      y: 0.72635174
+      y: 0.7498177
     - x: -66.09375
-      y: 0.7083807
+      y: 0.73430014
     - x: -64.6875
-      y: 0.6903607
+      y: 0.71878254
     - x: -63.28125
-      y: 0.67230314
+      y: 0.70326495
     - x: -61.875
-      y: 0.65421915
+      y: 0.6877474
     - x: -60.46875
-      y: 0.6361199
+      y: 0.6722298
     - x: -59.0625
-      y: 0.6180166
+      y: 0.65671223
     - x: -57.65625
-      y: 0.5999205
+      y: 0.6411947
     - x: -56.25
-      y: 0.5818429
+      y: 0.6256771
     - x: -54.84375
-      y: 0.5637948
+      y: 0.6101595
     - x: -53.4375
-      y: 0.5457876
+      y: 0.5946419
     - x: -52.03125
-      y: 0.5278324
+      y: 0.57912433
     - x: -50.625
-      y: 0.5099404
+      y: 0.56360674
     - x: -49.21875
-      y: 0.4921229
+      y: 0.54808915
     - x: -47.8125
-      y: 0.47439098
+      y: 0.53257155
     - x: -46.40625
-      y: 0.456756
+      y: 0.517054
     - x: -45
-      y: 0.43922907
+      y: 0.5015364
     - x: -43.59375
-      y: 0.42182148
+      y: 0.48601884
     - x: -42.1875
-      y: 0.40454435
+      y: 0.47050124
     - x: -40.78125
-      y: 0.3874089
+      y: 0.4549837
     - x: -39.375
-      y: 0.37042636
+      y: 0.43946612
     - x: -37.96875
-      y: 0.353608
+      y: 0.42394853
     - x: -36.5625
-      y: 0.33696496
+      y: 0.40843093
     - x: -35.15625
-      y: 0.32050848
+      y: 0.39291334
     - x: -33.75
-      y: 0.3042497
+      y: 0.3773958
     - x: -32.34375
-      y: 0.28819996
+      y: 0.36187822
     - x: -30.9375
-      y: 0.27237028
+      y: 0.34636062
     - x: -29.53125
-      y: 0.2567721
+      y: 0.33084303
     - x: -28.125
-      y: 0.24141645
+      y: 0.31532544
     - x: -26.71875
-      y: 0.22631466
+      y: 0.2998079
     - x: -25.3125
-      y: 0.21147782
+      y: 0.2842903
     - x: -23.90625
-      y: 0.19691724
+      y: 0.26877272
     - x: -22.5
-      y: 0.18264407
+      y: 0.25325513
     - x: -21.09375
-      y: 0.16866958
+      y: 0.23773754
     - x: -19.6875
-      y: 0.15500492
+      y: 0.22222
     - x: -18.28125
-      y: 0.14166135
+      y: 0.20670241
     - x: -16.875
-      y: 0.12865001
+      y: 0.19118482
     - x: -15.46875
-      y: 0.115982175
+      y: 0.17566723
     - x: -14.0625
-      y: 0.10366899
+      y: 0.16014963
     - x: -12.65625
-      y: 0.09172171
+      y: 0.14463204
     - x: -11.25
-      y: 0.08015156
+      y: 0.12911451
     - x: -9.84375
-      y: 0.06896973
+      y: 0.113596916
     - x: -8.4375
-      y: 0.058187485
+      y: 0.098079324
     - x: -7.03125
-      y: 0.04781592
+      y: 0.08256173
     - x: -5.625
-      y: 0.037866354
+      y: 0.06704414
     - x: -4.21875
-      y: 0.028349876
+      y: 0.051526606
     - x: -2.8125
-      y: 0.019277811
+      y: 0.036009014
     - x: -1.40625
-      y: 0.010661304
+      y: 0.020491421
     - x: 0
-      y: 0.0025116205
+      y: 0.004973829
     - x: 1.40625
       y: 0
     - x: 2.8125
@@ -20923,7 +20923,7 @@ MonoBehaviour:
   drives:
   - guid: cdd768c1-3f7c-4065-adea-70729f3b2dd8
     name: repulsion
-    isOpen: 0
+    isOpen: 1
     isMinView: 0
     connections:
     - node1Guid: 89f53200-7466-4375-99a0-4494e6b111c9
@@ -20958,111 +20958,111 @@ MonoBehaviour:
       node2Guid: c3f7ec91-e702-49e8-aa30-c349423da7b4
     inputGraphNodes:
     - guid: 89f53200-7466-4375-99a0-4494e6b111c9
-      x: 326.7002
-      y: 390.30002
+      x: 506.7002
+      y: -68.69998
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 522b8024-b7af-4f3b-87a9-c199ab8795ec
     - guid: d3427db9-faf2-4f87-9455-3724f29eb0ff
-      x: 326.7002
-      y: 591.30005
+      x: 506.7002
+      y: 132.30005
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 0a13450f-da60-46bb-a2b5-12d49f237e89
     - guid: 4f5b1cc3-a977-433f-8480-5a178209f65f
-      x: 706.70013
-      y: 585.30005
+      x: 886.70013
+      y: 126.30005
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 522b8024-b7af-4f3b-87a9-c199ab8795ec
     - guid: cf1db642-51fb-458e-9751-8078b21bb62b
-      x: 704.70013
-      y: 394.30002
+      x: 884.70013
+      y: -64.69998
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 0a13450f-da60-46bb-a2b5-12d49f237e89
     - guid: f1fb03b4-5348-40a1-91b6-cb17d22cc6e6
-      x: 329.7002
-      y: 806.30005
+      x: 509.7002
+      y: 347.30005
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 0a13450f-da60-46bb-a2b5-12d49f237e89
     - guid: 2d14a956-2582-4f26-a7b0-371fcafcaa5e
-      x: 332.7002
-      y: 996.30005
+      x: 512.7002
+      y: 537.30005
       variableGuid: 5ec2460d-518d-461b-be6f-2671ac93d7b0
       variableValueGuid: 0d7f8ad3-a245-4cac-b253-0ec664cb6bd7
     - guid: 21b3c851-00b3-40c3-ac8b-d84fc0cf54a3
-      x: 925.6999
-      y: 828.30005
+      x: 1105.7
+      y: 369.30005
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 0a13450f-da60-46bb-a2b5-12d49f237e89
     - guid: a3d3e149-ae3e-43ea-93d7-80f6c47fbb20
-      x: 927.6999
-      y: 1005.30005
+      x: 1107.7
+      y: 546.30005
       variableGuid: 5ec2460d-518d-461b-be6f-2671ac93d7b0
       variableValueGuid: 13373a09-f7e4-48ce-ae94-09444ac72323
     - guid: e21f07a0-66f6-4ec7-8299-8cb600bd34fd
-      x: 338.7002
-      y: 1205.3
+      x: 518.7002
+      y: 746.30005
       variableGuid: 51073591-5a57-4006-881d-b9e48483904d
       variableValueGuid: 0a13450f-da60-46bb-a2b5-12d49f237e89
     - guid: 7dac15d4-d13c-435f-b41b-4ad2706154cf
-      x: 337.7002
-      y: 1375.3
+      x: 517.7002
+      y: 916.30005
       variableGuid: 5ec2460d-518d-461b-be6f-2671ac93d7b0
       variableValueGuid: e24ca651-d8a1-40d6-8ce4-ddbd8015acb7
     outputGraphNodes:
     - guid: 14c46f81-9f9e-4b3a-a507-63a05db50aa1
-      x: 503.7002
-      y: 392.30002
+      x: 683.7002
+      y: -66.69998
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 8d73c056-1294-43b2-88de-7bc5c48abba9
     - guid: 41d0048c-6c8c-4d26-8895-1fca7b741825
-      x: 502.7002
-      y: 598.30005
+      x: 682.7002
+      y: 139.30005
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 8d73c056-1294-43b2-88de-7bc5c48abba9
     - guid: 69761b4f-d891-4ed5-b919-8959f87b0b92
-      x: 873.6999
-      y: 591.30005
+      x: 1053.7
+      y: 132.30005
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: 93d3e20b-ebad-45d6-b4bd-9d0988b1eb6d
     - guid: 50c22b79-a29a-4252-8365-01b3d9cee26f
-      x: 869.6999
-      y: 394.30002
+      x: 1049.7
+      y: -64.69998
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: 93d3e20b-ebad-45d6-b4bd-9d0988b1eb6d
     - guid: b25cf754-fc94-4e3d-a964-e8eea2240089
-      x: 684.70013
-      y: 900.30005
+      x: 864.70013
+      y: 441.30005
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: 7e186b99-9908-4bdb-bcce-2fe638f759d7
     - guid: a06786fd-d3b5-44fa-9c71-fd5ae0bc0397
-      x: 1255.7002
-      y: 816.30005
+      x: 1435.7002
+      y: 357.30005
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: f937fb12-988c-47c8-980e-c6c7e1e17b09
     - guid: 66abb839-4975-4d45-b45b-880ba0abfb64
-      x: 1261.7002
-      y: 995.30005
+      x: 1441.7002
+      y: 536.30005
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: d2db073e-7342-48b0-a953-f7e87b0fa838
     - guid: 66fd3c68-0918-499c-8547-f947a35f86f2
-      x: 689.70013
-      y: 1191.3
+      x: 869.70013
+      y: 732.30005
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 027820ba-af7e-497d-aff9-0cebb6450bd8
     - guid: c3f7ec91-e702-49e8-aa30-c349423da7b4
-      x: 695.70013
-      y: 1362.3
+      x: 875.70013
+      y: 903.30005
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: d2db073e-7342-48b0-a953-f7e87b0fa838
     andNodes:
     - guid: 103fa09e-d0c6-4b28-9e96-a0ad5521b480
-      x: 512.7002
-      y: 947.30005
+      x: 692.7002
+      y: 488.30005
     - guid: 2dcf34f2-9bae-4f6f-a7cf-46831cf7987e
-      x: 1090.7002
-      y: 941.30005
+      x: 1270.7002
+      y: 482.30005
     - guid: 92984eca-4ea1-4406-9938-84503c17a3cc
-      x: 517.7002
-      y: 1319.3
+      x: 697.7002
+      y: 860.30005
     orNodes: []
     notNodes: []
   - guid: 05232cb4-514a-46a0-a38b-d0ca9615663f
@@ -21252,96 +21252,96 @@ MonoBehaviour:
       node2Guid: fe53b709-26ac-422e-b389-726af07f949d
     inputGraphNodes:
     - guid: 0805115a-26c7-431a-92be-859c113eda5f
-      x: 612.86005
-      y: 301.08002
+      x: 467.86005
+      y: 126.08002
       variableGuid: 30399329-7cdd-4594-905f-4c92c15303c5
       variableValueGuid: 91cc3f83-e91f-497c-9682-61912d64fd82
     - guid: b4410223-262f-4dc6-91f2-6074dc11a9a0
-      x: 612.86005
-      y: 490.08
+      x: 467.86005
+      y: 315.08
       variableGuid: 3d782f19-ae96-4e26-8426-8f65c487cac6
       variableValueGuid: bec9abec-83ac-4e20-81dd-5cdb58199ceb
     - guid: d6db7c49-3e6c-4a55-a9d3-fc9f7738e609
-      x: 614.86005
-      y: 698.08
+      x: 469.86005
+      y: 523.08
       variableGuid: 30399329-7cdd-4594-905f-4c92c15303c5
       variableValueGuid: 91cc3f83-e91f-497c-9682-61912d64fd82
     - guid: c79df3f7-5e54-49e0-a1a0-99074c431465
-      x: 616.86005
-      y: 873.0799
+      x: 471.86005
+      y: 698.0799
       variableGuid: 3d782f19-ae96-4e26-8426-8f65c487cac6
       variableValueGuid: f4920f31-5baf-494c-b41e-e3030fa7cb7c
     - guid: 8ce6c9e2-e612-4dbe-b939-33c66804c1a4
-      x: 1176.2598
-      y: 732.18
+      x: 1031.2598
+      y: 557.18
       variableGuid: 30399329-7cdd-4594-905f-4c92c15303c5
       variableValueGuid: 91cc3f83-e91f-497c-9682-61912d64fd82
     - guid: 9902a986-e702-41d4-82da-c749f040aa38
-      x: 1170.2598
-      y: 902.18
+      x: 1025.2598
+      y: 727.18
       variableGuid: 30399329-7cdd-4594-905f-4c92c15303c5
       variableValueGuid: 91cc3f83-e91f-497c-9682-61912d64fd82
     - guid: 6f644648-8e3b-4565-9da7-746c4c41756f
-      x: 1199.5598
-      y: 309.58
+      x: 1054.5598
+      y: 134.57999
       variableGuid: 30399329-7cdd-4594-905f-4c92c15303c5
       variableValueGuid: 91cc3f83-e91f-497c-9682-61912d64fd82
     - guid: 0f314105-d67b-4bb6-95b4-fad074516931
-      x: 1203.5598
-      y: 493.58
+      x: 1058.5598
+      y: 318.58
       variableGuid: 3d782f19-ae96-4e26-8426-8f65c487cac6
       variableValueGuid: 6f90ffd9-776c-49c9-9cc6-b87ee418cae2
     outputGraphNodes:
     - guid: 28358c0d-5e8e-4868-beb3-2590bb65088b
-      x: 962.86005
-      y: 287.08002
+      x: 817.86005
+      y: 112.08002
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: f937fb12-988c-47c8-980e-c6c7e1e17b09
     - guid: adb7ae6f-b15b-4d62-91ab-665a0ab83f9b
-      x: 968.86005
-      y: 701.08
+      x: 823.86005
+      y: 526.08
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 027820ba-af7e-497d-aff9-0cebb6450bd8
     - guid: ec4d45f9-985d-4bc2-9265-581250e61fb2
-      x: 1395.2598
-      y: 722.18
+      x: 1250.2598
+      y: 547.18
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 8d73c056-1294-43b2-88de-7bc5c48abba9
     - guid: 531218fc-0b68-4700-a7f0-fbc9b637c0c7
-      x: 1391.2598
-      y: 903.18
+      x: 1246.2598
+      y: 728.18
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: 93d3e20b-ebad-45d6-b4bd-9d0988b1eb6d
     - guid: 5ff29bdd-a6ef-4502-89e2-e289a4f05e3f
-      x: 964.5599
-      y: 879.18
+      x: 819.5599
+      y: 704.18
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: d2db073e-7342-48b0-a953-f7e87b0fa838
     - guid: 80e2a968-ec02-48e8-808d-1ac0d77f79d2
-      x: 960.5599
-      y: 476.17996
+      x: 815.5599
+      y: 301.17996
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: d2db073e-7342-48b0-a953-f7e87b0fa838
     - guid: f90ebd57-4154-4f02-b27c-b09a392e8327
-      x: 1518.5598
-      y: 395.58
+      x: 1373.5598
+      y: 220.57999
       variableGuid: 654cfd58-8fe1-4aa3-b135-786ad1e0f18a
       variableValueGuid: 7e186b99-9908-4bdb-bcce-2fe638f759d7
     andNodes:
     - guid: 1424c8c2-4ce9-4d46-a22d-b8507e0bab15
-      x: 786.86005
-      y: 417.08
+      x: 641.86005
+      y: 242.07999
     - guid: b9230794-5457-4ce4-946f-b76cce0d4e7b
-      x: 792.86005
-      y: 825.0799
+      x: 647.86005
+      y: 650.0799
     - guid: fe53b709-26ac-422e-b389-726af07f949d
-      x: 1375.5598
-      y: 445.58
+      x: 1230.5598
+      y: 270.58
     orNodes: []
     notNodes: []
   - guid: bb141e44-a72e-488e-a53f-58e0c22fc50b
     name: target
-    isOpen: 1
+    isOpen: 0
     isMinView: 0
     connections:
     - node1Guid: b11c4f03-23e5-4f0e-9cf7-b054d2e379e0
@@ -21360,52 +21360,52 @@ MonoBehaviour:
       node2Guid: 3aad250f-8e3b-4758-b3cd-ef72de79582d
     inputGraphNodes:
     - guid: b11c4f03-23e5-4f0e-9cf7-b054d2e379e0
-      x: 757.95
-      y: 194.05002
+      x: 706.95
+      y: 113.05002
       variableGuid: 43de185a-055c-4bb1-809d-16cb842b263b
       variableValueGuid: 2aadd0a0-00d8-45f0-8bab-8e4a18eeebce
     - guid: e7eba409-8606-400a-89de-f974c92c3215
-      x: 758.95
-      y: 379.05002
+      x: 707.95
+      y: 298.05002
       variableGuid: 8b6ccf26-4026-40f7-a17b-ab86a64e4075
       variableValueGuid: 5f91ac0c-77a8-46c4-ad58-f899cbbc3c58
     - guid: 74c86bc7-39ad-4fa0-b222-bc25b9ddc896
-      x: 749.95
-      y: 595.05005
+      x: 698.95
+      y: 514.05005
       variableGuid: 43de185a-055c-4bb1-809d-16cb842b263b
       variableValueGuid: 2aadd0a0-00d8-45f0-8bab-8e4a18eeebce
     - guid: 5c05fc59-f226-4045-9e76-d6e7cdfbd892
-      x: 747.95
-      y: 767.05005
+      x: 696.95
+      y: 686.05005
       variableGuid: 8b6ccf26-4026-40f7-a17b-ab86a64e4075
       variableValueGuid: fa570862-ac42-4518-b9e0-2caa7bf7e6ec
     - guid: 56235bf9-b6bd-4f8e-8fd4-b2680d182664
-      x: 322.00012
-      y: 322.30002
+      x: 271.00012
+      y: 241.30002
       variableGuid: 43de185a-055c-4bb1-809d-16cb842b263b
       variableValueGuid: 2aadd0a0-00d8-45f0-8bab-8e4a18eeebce
     outputGraphNodes:
     - guid: 7c234f79-3685-4aa0-8f42-a6b14d40ec0d
-      x: 1064.9502
-      y: 266.05002
+      x: 1013.95026
+      y: 185.05002
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 027820ba-af7e-497d-aff9-0cebb6450bd8
     - guid: cceab2e9-76f1-46cc-b7ac-fdd800fc73af
-      x: 1065.9502
-      y: 694.05005
+      x: 1014.95026
+      y: 613.05005
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: f937fb12-988c-47c8-980e-c6c7e1e17b09
     - guid: 3aad250f-8e3b-4758-b3cd-ef72de79582d
-      x: 511.00012
-      y: 319.30002
+      x: 460.00012
+      y: 238.30002
       variableGuid: aa8804eb-a98b-4c50-bb2b-2cb6cb98a799
       variableValueGuid: 8d73c056-1294-43b2-88de-7bc5c48abba9
     andNodes:
     - guid: 86fa3a6c-3f39-4179-b442-154d356f5440
-      x: 930.95
-      y: 310.05002
+      x: 879.95
+      y: 229.05002
     - guid: 73de44e4-f34d-47dc-8aef-be1f583e9d3f
-      x: 933.95
-      y: 742.05005
+      x: 882.95
+      y: 661.05005
     orNodes: []
     notNodes: []
