@@ -43,8 +43,9 @@ public class BirdAgent3D : Agent {
 
     private void Update() {
 
-        Vector3 r = Vector3.Cross(Vector3.up, this.Direction).normalized;
-        Vector3 u = Vector3.Cross(this.Direction, r).normalized;
+        Vector3 f = this.Direction.normalized;
+        Vector3 l = Vector3.Cross(f, Vector3.up).normalized;
+        Vector3 u = Vector3.Cross(l, f).normalized;
         
         if (this.Neighbors != null && this.Neighbors.Count > 0) {
 
@@ -58,32 +59,14 @@ public class BirdAgent3D : Agent {
                 if (distance < 0) distance = 0;
                 this.GetFuzzyController().SetValue(i, "distance", distance);
 
-                float hPosition = Vector3.SignedAngle(
-                    this.Direction, 
-                    Vector3.ProjectOnPlane(neighborPosition - this.Position, u),
-                    u
-                );
-                this.GetFuzzyController().SetValue(i, "h_position", hPosition);
+                var (hPosition, vPosition) = Utils.Angle(f, l, u, neighborPosition - this.Position);
 
-                float vPosition = Vector3.SignedAngle(
-                    this.Direction, 
-                    Vector3.ProjectOnPlane(neighborPosition - this.Position, r), 
-                    r
-                );
+                this.GetFuzzyController().SetValue(i, "h_position", hPosition);
                 this.GetFuzzyController().SetValue(i, "v_position", vPosition);
 
-                float hDirection = Vector3.SignedAngle(
-                    this.Direction, 
-                    Vector3.ProjectOnPlane(neighborDirection, u),
-                    u
-                );
-                this.GetFuzzyController().SetValue(i, "h_direction", hDirection);
+                var (hDirection, vDirection) = Utils.Angle(f, l, u, neighborDirection);
 
-                float vDirection = Vector3.SignedAngle(
-                    this.Direction, 
-                    Vector3.ProjectOnPlane(neighborDirection, r),
-                    r
-                );
+                this.GetFuzzyController().SetValue(i, "h_direction", hDirection);
                 this.GetFuzzyController().SetValue(i, "v_direction", vDirection);
 
                 float speed = (((neighborSpeed - this.Speed) - this.MinSpeed) / (this.MaxSpeed - this.MinSpeed)) * 100;
@@ -109,30 +92,12 @@ public class BirdAgent3D : Agent {
         if (min_wall_position != null) {
 
             float distanceW = 0;
-            float hPositionW = 0;
-            float vPositionW = 0;
 
             distanceW = (min_wall_distance.Value / WallPerceptionRadius) * 100;
             if (distanceW > 100) distanceW = 100;
             if (distanceW < 0) distanceW = 0;
 
-            Vector3 wall_dir = (min_wall_position.Value - this.Position);
-
-            Vector3 projh = Vector3.ProjectOnPlane(wall_dir, u);
-
-            Vector3 projv = Vector3.ProjectOnPlane(wall_dir, r);
-
-            hPositionW = Vector3.SignedAngle(
-                this.Direction, 
-                projh, 
-                u
-            );
-
-            vPositionW = Vector3.SignedAngle(
-                this.Direction, 
-                projv, 
-                r
-            );
+            var (hPositionW, vPositionW) = Utils.Angle(f, l, u, min_wall_position.Value - this.Position);
 
             this.GetFuzzyController().SetValue(-1, "distance_wall", distanceW);
             this.GetFuzzyController().SetValue(-1, "h_position_wall", hPositionW);
@@ -146,7 +111,7 @@ public class BirdAgent3D : Agent {
         float? flightSpeed = this.GetFuzzyController().GetValue("flight_speed");
 
         if (hFlightDirection != null && vFlightDirection != null) {
-            this.Direction = (Quaternion.AngleAxis(vFlightDirection.Value, r) * this.Direction).normalized;
+            this.Direction = (Quaternion.AngleAxis(vFlightDirection.Value, l) * this.Direction).normalized;
             this.Direction = (Quaternion.AngleAxis(hFlightDirection.Value, u) * this.Direction).normalized;
         }
 

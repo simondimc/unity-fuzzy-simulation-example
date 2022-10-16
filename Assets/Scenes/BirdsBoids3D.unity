@@ -1090,7 +1090,7 @@ PrefabInstance:
       objectReference: {fileID: 2065288484084933410, guid: 6b6100be30336374397b6beb399d5757, type: 3}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: NumberToSpawn
-      value: 150
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: maxPosition.y
@@ -1190,7 +1190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: NeighborhoodCalcMode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: neighborhoodCalcMode
