@@ -749,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 2453282187075290471, guid: 02ae96959495b4a4ebb9dec18a094a5e, type: 3}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: NumberToSpawn
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: numberToSpawn
@@ -765,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 483fcf8a0c435cc43ae1102df134ee46, type: 2}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: CalcEveryNFrames
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: fastNeighborCalc
@@ -817,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: NeighborhoodCalcMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352585, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: neighborhoodCalcMode
@@ -2857,7 +2857,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f8eb1a5ff78b5743ab862465463e4b9, type: 2}
+  - {fileID: 2100000, guid: c9192ec25dcf9054c865945bf7cd66b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
