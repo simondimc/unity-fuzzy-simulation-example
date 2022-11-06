@@ -1,6 +1,6 @@
-# Example project for Fuzzy Simulation plugin
+# Example project for Fuzzy Simulation package
 
-Fuzzy Simulation plugin: https://github.com/simondimc/unity-fuzzy-simulation
+Fuzzy Simulation package: https://github.com/simondimc/unity-fuzzy-simulation
 
 ## 2D boids flock of birds model
 
