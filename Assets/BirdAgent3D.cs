@@ -29,11 +29,11 @@ public class BirdAgent3D : Agent {
         this.Speed = Random.Range(this.MinSpeed, this.MaxSpeed);
         this.walls = new Vector4[] {
             new Vector4(1, 0, 0, 0),
-            new Vector4(1, 0, 0, 100),
+            new Vector4(1, 0, 0, 50),
             new Vector4(0, 1, 0, 0),
-            new Vector4(0, 1, 0, 100),
+            new Vector4(0, 1, 0, 50),
             new Vector4(0, 0, 1, 0),
-            new Vector4(0, 0, 1, 100),
+            new Vector4(0, 0, 1, 50),
         };
     }
 

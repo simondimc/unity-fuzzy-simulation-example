@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &243311953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,7 +1658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1353173155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,7 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236829162019352591, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa02057e0885b846823d0a0d3720c17, type: 3}
@@ -1866,7 +1866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1440789012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,13 +1879,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28e7daa8a577724f8968c8a22cbf44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberToSpawn: 1024
-  SpawnMinPosition: {x: -60, y: 1, z: -30}
-  SpawnMaxPosition: {x: 60, y: 1, z: 30}
+  NumberToSpawn: 80
+  SpawnMinPosition: {x: -30, y: 1, z: -15}
+  SpawnMaxPosition: {x: 30, y: 1, z: 15}
   AgentToSpawn: {fileID: 2065288484084933410, guid: 560d894526c5c1243924fb9176523207, type: 3}
   AgentTagToLookFor: 
   CalcEveryNFrames: 1
-  NeighborhoodCalcMode: 2
+  NeighborhoodCalcMode: 1
   CPUTreeDepth: 4
   CPUTreeBucketSize: 8
   DirectToNode: 0
