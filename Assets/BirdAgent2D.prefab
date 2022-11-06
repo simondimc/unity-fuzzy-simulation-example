@@ -48,7 +48,7 @@ MonoBehaviour:
   PerceptionRadius: 4
   HorizontalFOV: 300
   VerticalFOV: 300
-  WallPerceptionRadius: 4
+  WallPerceptionRadius: 6
   Sphere: {fileID: 8603444229015501986}
   MinSpeed: 1
   MaxSpeed: 6
